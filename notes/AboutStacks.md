@@ -12,7 +12,7 @@ For use onto stacks, usually there are seven { DROP DUP OVER SWAP >R R> R@ } ato
 
 Lets make a list, to change 3 cells at top (O= is the number of atomic operations) :
 
-[Three Balls](https://github.com/agsb/immu/blob/main/docs/180px-Permutations_RGB.svg.png "permutations of 3 balls")
+[Three Balls](https://github.com/agsb/agsb.github.io/blob/main/docs/180px-Permutations_RGB.svg.png "permutations of 3 balls")
 
 ```
 note: ( left is down, right is up -- result )
