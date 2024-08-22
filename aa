@@ -1,0 +1,3 @@
+[Minimal Thread Code](https://github.com/agsb/milliForth-6502/blob/main/The_words_in_MTC_Forth.en.pdf) 
+is an alternative model for inner interpreter, where 
+the dictionary is organized with the primitives words grouped together 
