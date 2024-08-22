@@ -64,6 +64,8 @@
 
     .asciiz "Worse is better."
 
+    .asciiz "Expect Us!"
+ 
     .asciiz "There is no spoon."
  
     ; rollete as Pascal made, 32 is red, 15 is black, and so on, 1/37 is 0,027027027
