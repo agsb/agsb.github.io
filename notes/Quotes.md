@@ -76,6 +76,8 @@
 
     .asciiz "Let sleeping lions sleep."
 
+    .asciiz "remember the Kobayashi Maru."
+
     .asciiz "We're sorry, that page doesn't exist."
 
     .asciiz "Your first ten thousand photographs are your worst."
