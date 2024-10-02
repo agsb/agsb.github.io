@@ -88,6 +88,8 @@
 
     .asciiz "Nobody else quite like you"
 
+    .asciiz ""Fast.  Cheap.  Good.  Pick two."
+
     .ascii "Slings move continents, a rock at a time"
 
     ; rollete as Pascal made, 32 is red, 15 is black, and so on, 1/37 is 0,027027027, zero is green 
