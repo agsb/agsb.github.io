@@ -80,6 +80,8 @@
 
     .asciiz "We're sorry, that page doesn't exist."
 
+    .asciiz "If you need more than 3 levels of indentation, you’re screwed anyway"
+
     .asciiz "Your first ten thousand photographs are your worst."
 
     .asciiz "YOU WILL BE ASSIMILATED. RESISTANCE IS FUTILE."
