@@ -151,12 +151,12 @@ _All operations needs pull and push_
 
 ### absolute address indexed by X or Y, not splited
       
-Uses one absolute pointer _pointer_ to memory. Stacks with up to 128 cells. 
+Uses one absolute pointer _pointer_ anywhere in memory. Stacks with up to 128 cells. 
 Uses ~58 cycles and 28 bytes of code. The pointer is fixed.
 _Multiple stacks can be used as changing index, but all must split whitin a range of 128 cells_  
 _Any operation with values at stack could be at direct offset, no need use pulls and pushs_
 
-      .macro push_ax index, value 
+      .macro push_ax index, pointer, value 
             LDX index
             DEC index
             DEC index
@@ -181,14 +181,14 @@ _Any operation with values at stack could be at direct offset, no need use pulls
       
 ### split absolute address indexed by X or Y
       
-Uses two absolute pointers _pointer_lo_ and _pointer_hi_ to memory. 
+Uses two absolute pointers _pointer_lo_ and _pointer_hi_ anywhere in memory. 
 Stacks with up to 256 cells, splited in two parts. 
 Uses ~58 cycles, 28 bytes of code.  
 _Any operations with values at stack could be at direct offset, no need pulls and pushs_
 
       ; Usually the order is LSB,MSB,LSB,MSB,LSB,MSB,... changed to LSB,LSB,LSB,...,MSB,MSB,MSB,...
 
-      .macro push_axs index, value 
+      .macro push_axs index, pointer_lo, pointer_hi, value 
             LDX index;
             DEC index;
             LDA value + 0;
@@ -197,7 +197,7 @@ _Any operations with values at stack could be at direct offset, no need pulls an
             STA pointer_hi - 1, X;
       .endmacro    
       
-      .macro pull_axs index, value 
+      .macro pull_axs index, pointer_lo, pointer_hi, value 
             LDX index;
             INC index;
             LDA pointer_lo + 0, X;
