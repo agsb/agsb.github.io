@@ -89,7 +89,7 @@ For a generic Forth system,
 Notes:
 
 - The values for TIB, PAD, BOB are mininal size, as defined by standart Forth 1994 and Forth 2012;
-- The values for stacks are minimal enough, as said by Charles Moore
+- The values for stacks are minimal enough, only 18, as said by Charles Moore
 - About TIB there is a quote, from old days of IBM paper card, " 72 is continue ";
 
 ### The dictionary
