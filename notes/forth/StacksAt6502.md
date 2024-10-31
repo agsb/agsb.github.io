@@ -29,11 +29,11 @@ Using page zero or stack page, needs reserve space for the system bios and appli
 
 ## Some ways to stacks
 
-These are most commom implementations, using index, pointer, value (LSB, MSB) in zero page. 
+These are most commom implementations, for **push** and **pull**, using index, pointer, value (LSB, MSB) in zero page. 
 
 ### hardware stack SP
 
-Uses the hardware stack, must split. Each stack uses cycles ~66 cc, 40 bytes of code and 4 bytes. _Could not use JSR/RTS inside_.
+Uses the hardware stack, but at diferent offset. Uses ~66 cycles and 40 bytes of code. _Could not use JSR/RTS inside_.
 
       .macro push_sp index, value 
             LDA index;
@@ -71,124 +71,158 @@ Uses the hardware stack, must split. Each stack uses cycles ~66 cc, 40 bytes of 
 
 ### page zero indexed by X
       
-Uses the page zero as stack, could be splited. Each stack uses cycles ~48 cc, 28 bytes of code and 4 bytes at zero page;
+Uses the page zero as stack. Uses ~48 cycles and 28 bytes of code;
 
       .macro push_zx index, pointer, value 
-            LDX \index; 
+            LDX index; 
             DEX; 
-            LDA \value + 1; 
-            STA \pointer, X;
+            LDA value + 1; 
+            STA pointer, X;
             DEX; 
-            LDA \value + 0;
-            STA \pointer, X;
-            STX \index;
+            LDA value + 0;
+            STA pointer, X;
+            STX index;
       .endmacro     
       
       .macro pull_zx index, pointer, value 
-            LDX \index;
-            LDA \pointer, X;
-            STA \value + 1;
+            LDX index;
+            LDA pointer, X;
+            STA value + 1;
             INX;
-            LDA \pointer, X;
-            STA \value + 0;
+            LDA pointer, X;
+            STA value + 0;
             INX;
-            STX \index;
+            STX index;
       .endmacro
 
 ### page zero indirect indexed by Y
 
-Uses the a pointer in page zero to anywhere in memory. Stacks with up to 128 cells. Each stack uses ~50 cc, 28 bytes of code and 4 bytes 
-at zero page. _Multiuser and Multitask systems can change the pointers anytime._ 
+Uses the a pointer in page zero to anywhere in memory. Stacks with up to 128 cells. 
+Uses ~52 cycles and 28 bytes of code. 
+_Multiuser and Multitask systems can change the pointers anytime._ 
+_All operations needs pull and push_
 
       .macro push_iy index, pointer, value 
-            LDY \index;
+            LDY index;
             DEY;
-            LDA \value + 1;
-            STA (\pointer), Y;
+            LDA value + 1;
+            STA (pointer), Y;
             DEY;
-            LDA \value + 0;
-            STA (\pointer), Y;
-            STY \index;
+            LDA value + 0;
+            STA (pointer), Y;
+            STY index;
       .endmacro      
       
       .macro pull_iy index, pointer, value 
-            LDY \index;
-            LDA (\pointer), Y;
-            STA \value + 1;
+            LDY index;
+            LDA (pointer), Y;
+            STA value + 1;
             INY;
-            LDA (\pointer), Y;
-            STA \value + 0;
+            LDA (pointer), Y;
+            STA value + 0;
             INY;
-            STY \index;
+            STY index;
+      .endmacro
+      
+### page zero indirect indexed by Y, splited
+
+Uses the a pointer in page zero to anywhere in memory. Stacks with up to 256 cells. 
+Uses ~52 cycles and 28 bytes of code. 
+_Multiuser and Multitask systems can change the pointers anytime._ 
+_All operations needs pull and push_
+
+      .macro push_iy index, pointer_lo, pointer_hi, value 
+            LDY index;
+            DEY index;
+            LDA value + 0;
+            STA (pointer_lo), Y;
+            LDA value + 1;
+            STA (pointer_hi), Y;
+      .endmacro      
+      
+      .macro pull_iy index, pointer_lo, pointer_hi, value 
+            LDY index;
+            INC index;
+            LDA (pointer_lo), Y;
+            STA value + 0;
+            LDA (pointer_hi), Y;
+            STA value + 1;
       .endmacro
 
 ### absolute address indexed by X or Y, not splited
       
-Uses one absolute pointer _pointer_ to memory. Stacks with up to 128 cells. Each stack uses ~52 cc, 32 bytes of code and 2 bytes at zero 
-page. _Any operation with values at stack could be at direct offset, no need use pulls and pushs_
+Uses one absolute pointer _pointer_ to memory. Stacks with up to 128 cells. 
+Uses ~58 cycles and 28 bytes of code. The pointer is fixed.
+_Multiple stacks can be used as changing index, but all must split whitin a range of 128 cells_  
+_Any operation with values at stack could be at direct offset, no need use pulls and pushs_
 
       .macro push_ax index, value 
-            LDX \index;
-            LDA \value + 1;
+            LDX index
+            DEC index
+            DEC index
+            LDA value + 1;
             STA pointer - 1, X;
-            LDA \value + 0;
+            LDA value + 0;
             STA pointer - 2, X;
-            DEX;
-            DEX;
-            STX \index;
       .endmacro    
       
       .macro pull_ax index, value 
-            LDX \index;
+            LDX index;
+            INC index
+            INC index
             LDA pointer + 0, X;
-            STA \value + 0;
+            STA value + 0;
             LDA pointer + 1, X;
-            STA \value + 1;;
-            INX;
-            INX;
-            STX \index; 
+            STA value + 1;;
       .endmacro
 
+      Eg,   Using stack size of 24 cells, does 4 stacks of 24 cells and one of 32 cells, per pointer. 
+            Two pointers, for data and return, could allow 5 independent context tasks;
+      
 ### split absolute address indexed by X or Y
       
-Uses two absolute pointers _pointer_lo_ and _pointer_hi_ to memory. Stacks with up to 256 cells, splited in two parts. Each stack uses ~4
-8 cc, 30 bytes of code and 2 bytes at zero page.  _Any operations with values at stack could be at direct offset, no need pulls and pushs
-_
+Uses two absolute pointers _pointer_lo_ and _pointer_hi_ to memory. 
+Stacks with up to 256 cells, splited in two parts. 
+Uses ~58 cycles, 28 bytes of code.  
+_Any operations with values at stack could be at direct offset, no need pulls and pushs_
+
+      ; Usually the order is LSB,MSB,LSB,MSB,LSB,MSB,... changed to LSB,LSB,LSB,...,MSB,MSB,MSB,...
 
       .macro push_axs index, value 
-            LDX \index;
-            LDA \value + 1;
+            LDX index;
+            DEC index;
+            LDA value + 0;
             STA pointer_lo - 1, X;
-            LDA \value + 0;
+            LDA value + 1;
             STA pointer_hi - 1, X;
-            DEX;
-            STX \index;
       .endmacro    
       
       .macro pull_axs index, value 
-            LDX \index;  
+            LDX index;
+            INC index;
             LDA pointer_lo + 0, X;
-            STA \value + 0;
+            STA value + 0;
             LDA pointer_hi + 0, X;
-            STA \value + 1;
-            INX;
-            STX \index;
+            STA value + 1;
       .endmacro
 
+
+      Eg,   Using stack size of 24 cells, does 9 stacks of 24 cells and one of 40 cells, per pointer. 
+            Two pointers, for data and return, could allow 10 independent context tasks;
+      
 ### direct address with indirect access by Y
 
-Uses an absolute pointer _pointer_ to memory. _Stacks with up to any size_. Each stack uses ~96 cc, 58 bytes of code and 2 bytes at page 
-zero. 
+Uses an absolute pointer _pointer_ to memory. _Stacks with up to any size_. Both uses ~44 cc, 84 bytes of code. 
 
       .macro push_di pointer, value 
             LDY #0; 
-            LDA \value + 1;
+            LDA value + 1;
             STA (pointer), Y; 
             INC pointer + 0;
             BNE :+ ;
             INC pointer + 1; 
             : ;
-            LDA \value + 0;
+            LDA value + 0;
             STA (pointer), Y; 
             INC pointer + 0;
             BNE :+ ;
@@ -204,7 +238,7 @@ zero.
             : ;
             DEC pointer + 0; 
             LDA (pointer), Y;
-            STA \value + 1; 
+            STA value + 1; 
             LDA pointer + 0;
             BNE :+ ;          
             DEC pointer + 1;
