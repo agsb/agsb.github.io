@@ -6,26 +6,30 @@ _Charles Moore says 22 levels is enough for Forth._
 
 The R65F11, a 6502 clone with native Forth inside, uses 30 cells for return stack and 50 cells for parameter/data stack.
 
-The Forth Standarts recommends at least 24 cells for return stack and 36 cells for parameter/data stack.
+The Forth Standarts (1979, 1983, 1994?) recommends at least 24 cells for return stack and 32 cells for parameter/data stack.
+
+But which the better, maybe not the best, mode of _stack implementation_ in a 8 bit CPU with 16 bit memory address range ?
 
 ## Back Stacks
 
-The 6502 have two peculiar pages, the zero page and stack page, both unique and with 256 bytes. All sub-routines calls (JSR) and returns (RTS) uses the stack page for 16-bit pointers, also the indirect indexed and indexed indirect modes uses page zero. Those are valuable resources.
+The 6502 have two peculiar pages, the zero page and stack page, both unique and with 256 bytes. All sub-routines calls (JSR) and returns (RTS) uses the stack page for 16-bit pointers, also the indirect indexed and indexed indirect modes uses page zero. Those are unique and valuable resources.
 
 An good revew of 6502 addressing modes at [emulators](http://www.emulator101.com/6502-addressing-modes.html).
 
-In 6502 code, to pass a byte between memory, always need use LDA and STA, there are exotic alternatives, but all uses the accumulator.
+In 6502 code, to pass a byte between memory, always need use LDA and STA, there are exotic alternatives, but all use the accumulator.
 
 Almost 6502 typical stack implementations does as standart: 
       
       1. Allow till 128 words deep stack; 
-      2. Any operation with values at stack must do pushs and pulls. 
+      2. Any operation with values at stack must do pushs and pulls, using the accumulator. 
       3. Any multitask or multiuser system must split or copy the stack.
       4. Stack of 128 words are round-robin, else could need check limits.
       
-If using page zero or stack page, the 128 words must be split in 3 parts: One for generic code use ( < 84 words ); One for data stack ( > 22 words ); One for return stack ( > 22 words ). For multitask or multiuser, could be 2 tasks with 2 stacks of 24 words and a generic stack of 32.
-      
-These are most commom, using index, pointer, LSB, MSB in zero page: 
+Using page zero or stack page, needs reserve space for the system bios and application, and Forth uses two stacks.
+
+## Some ways to stacks
+
+These are most commom implementations, using index, pointer, value (LSB, MSB) in zero page. 
 
 ### hardware stack SP
 
@@ -262,5 +266,8 @@ done using offsets (table 2).
 
 Note that all modes needs read and write stack indexes from/into somewhere, then _lda, sta, inc, dec_ are always used.
 
+One for application generic code use ( < 84 words ); One for data stack ( > 22 words ); One for return stack ( > 22 words ). 
+
+For multitask or multiuser, could be 2 tasks with 2 stacks of 24 words and a generic stack of 32.
 
 
