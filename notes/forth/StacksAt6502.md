@@ -1,8 +1,12 @@
-# The Stacks
-
 _this is still a stub_
 
+# The Stacks
+
 _Charles Moore says 22 levels is enough for Forth._
+
+The R65F11, a 6502 clone with native Forth inside, uses 30 cells for return stack and 50 cells for parameter/data stack.
+
+The Forth Standarts recommends at least 24 cells for return stack and 36 cells for parameter/data stack.
 
 ## Back Stacks
 
