@@ -264,36 +264,30 @@ Uses an absolute pointer _pointer_ to memory. _Stacks with up to any size_. Both
 
 ### What Do 
 
-Consider for no multitask, no multiuser, just 128 deep stacks, reduce overhead, direct memoy access and good timing, then
+Consider for no multitask, no multiuser, 256 deep stacks, reduce overhead, direct memoy access and good timing, then
 
-_Using absolute address indexed access for stacks_ 
+_Using absolute address indexed splited access for stacks_ 
 
 It provides the most fast overall implementation because does not need use push and pull. 
 
-All operations DROP, DUP, OVER, SWAP, ROT, AND, OR, XOR, NEG, INV, ADD, SUB, INC, DEC, EQ, LT, GT, SHL, SHR, AT (Fetch), TO (Store), are 
+All operations DROP, DUP, OVER, SWAP, ROT, AND, OR, XOR, NEG, INV, ADD, SUB, INC, DEC, EQ, LT, GT, 2/, 2*, 0=, 0<, 0>, are
 done using offsets (table 2).
-  
+
+( w1 w2 w3 -- wd wc wb w1 w2 w3)
+
   | _table 2_ | memory layout|
   | --- | --- | 
   | low | address |
-  | -4  | LSB *COS*|
-  | -3  | MSB |
-  | -2  | LSB *BOS*|
-  | -1  | MSB |
-  |  0  | LSB **TOS** |
-  | +1  | MSB |
-  | +2  | LSB *NOS* |
-  | +3  | MSB |
-  | +4  | LSB *MOS* |
-  | +5  | MSB |
-  | +6  | LSB *POS* |
-  | +7  | MSB |
+  | -2  | *C* |
+  | -1  | *B* |
+  |  0  | **TOS** 1st|
+  | +1  | *NOS* 2nd |
+  | +2  | *ROS* 3td |
   | high | address |
 
-      - Odd address are always MSB, even address are always LSB
+      - Offset from pointer_lo and pointer_hi, tip: pointer_lo = $XX00; pointer_hi = pointer_lo + $FF
       - TOS, top in stack; NOS, next in stack; 
-      - MOS, POS, next in sequence, BOS, COS back in sequence, for easy macros 
-
+      
 ### Best
 
 **For common "alone" applications _zero page indexed by X_ with 24 words per stack and 32 words shared could be faster.** 
