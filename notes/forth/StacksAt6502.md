@@ -31,6 +31,8 @@ Using page zero or stack page, needs reserve space for the system bios and appli
 
 These are most commom implementations, for **push** and **pull**, using index, pointer, value (LSB, MSB) in zero page. 
 
+Counting cycles and bytes for pull and push.
+
 ### hardware stack SP
 
 Uses the hardware stack, but at diferent offset. Uses ~66 cycles and 40 bytes of code. _Could not use JSR/RTS inside_.
@@ -72,6 +74,7 @@ Uses the hardware stack, but at diferent offset. Uses ~66 cycles and 40 bytes of
 ### page zero indexed by X
       
 Uses the page zero as stack. Uses ~48 cycles and 28 bytes of code;
+_Any operation with values at stack could be at direct offset, no need use pulls and pushs_
 
       .macro push_zx index, pointer, value 
             LDX index; 
@@ -93,6 +96,29 @@ Uses the page zero as stack. Uses ~48 cycles and 28 bytes of code;
             STA value + 0;
             INX;
             STX index;
+      .endmacro
+
+### page zero indexed by X, splited by STACKSIZE
+      
+Uses the page zero as stack. Uses ~44 cycles and 24 bytes of code; the LSM and MSB are located with a STACKSIZE offset.
+_Any operation with values at stack could be at direct offset, no need use pulls and pushs_
+
+      .macro push_zx index, pointer, value 
+            LDX index; 
+            DEC index;
+            LDA value + 1; 
+            STA pointer + STACKSIZE, X;
+            LDA value + 0;
+            STA pointer + 0, X;
+      .endmacro     
+      
+      .macro pull_zx index, pointer, value 
+            LDX index;
+            INC index;
+            LDA pointer + STACKSIZE, X;
+            STA value + 1;
+            LDA pointer + 0, X;
+            STA value + 0;
       .endmacro
 
 ### page zero indirect indexed by Y
@@ -185,6 +211,7 @@ Uses two absolute pointers _pointer_lo_ and _pointer_hi_ anywhere in memory.
 Stacks with up to 256 cells, splited in two parts. 
 Uses ~58 cycles, 28 bytes of code.  
 _Any operations with values at stack could be at direct offset, no need pulls and pushs_
+_Usually pointer_hi and pointer_lo differs by STACKSIZE_
 
       ; Usually the order is LSB,MSB,LSB,MSB,LSB,MSB,... changed to LSB,LSB,LSB,...,MSB,MSB,MSB,...
 
@@ -212,8 +239,10 @@ _Any operations with values at stack could be at direct offset, no need pulls an
       
 ### direct address with indirect access by Y
 
-Uses an absolute pointer _pointer_ to memory. _Stacks with up to any size_. Both uses ~44 cc, 84 bytes of code. 
-
+Uses an absolute pointer _pointer_ to memory. Both uses ~44 cc, 84 bytes of code. 
+ _Stacks with up to any size_.
+ _Works like common stacks in 16-bit CPUs_
+ 
       .macro push_di pointer, value 
             LDY #0; 
             LDA value + 1;
@@ -290,11 +319,11 @@ done using offsets (table 2).
       
 ### Best
 
-**For common "alone" applications _zero page indexed by X_ with 24 words per stack and 32 words shared could be faster.** 
+**For common "alone" applications _zero page indexed by X splited_ could be most faster.** 
 
 Note that all modes needs read and write stack indexes from/into somewhere, then _lda, sta, inc, dec_ are always used.
 
-One for application generic code use ( < 84 words ); One for data stack ( > 22 words ); One for return stack ( > 22 words ). 
+Could reserve splits, One for application generic code use ( <= 8 words ) and Two for Forth stacks ( <= 24 words x 2). 
 
 For multitask or multiuser, could be 2 tasks with 2 stacks of 24 words and a generic stack of 32.
 
