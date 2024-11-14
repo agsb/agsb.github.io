@@ -8,7 +8,7 @@
  
   I have a cognitive problem about stack notation.
  
-  It represents the order of "pushed into the stack", 
+  For didactic purposes, it represents the order of "pushed into the stack", 
   not the order "count from top of stack".
 
   In standards 79, 83, 94, the cells in ( after -- before ), 
@@ -17,18 +17,18 @@
   For example, when representing ( w1 w2 w3 -- ), the order 
   is be w3 at the top and w1 at the bottom.
  
-  The cells indices for 
+  The cells indices,  
           
-        ( w1 w2 w3 -- ), are of w1 is 3 and of w2 is 2,
+  __for ( w1 w2 w3 -- ), are of w1 is 3 and of w2 is 2,__
         
-  but for 
-        
-        ( w1 w2    -- ), are of w1 is 2 and of w2 is 1.
+  but
+  
+  __for ( w1 w2    -- ), are of w1 is 2 and of w2 is 1.__
  
-  This is very confusing to me, when using the stack in words.
+  This is very confusing to me, indices vary with depth of stack.
  
-  I prefer to use w1 always at top, and the following indicating 
-  the position relative to the top of the stack, as the depth level.
+  I prefer to use left always at top, and the following indicating 
+  the position relative to the top of the stack.
  
   So w1 will always be 1, w2 will always be 2, and so on,
   the indices are always in the same order.
@@ -36,3 +36,4 @@
   To differentiate, I'm using double parentheses as comments of stack 
   elements to indicate the top of stack is at left, thus, 
   it is ever the last element pushed into stack.
+
