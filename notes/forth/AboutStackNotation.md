@@ -3,16 +3,16 @@
   __The top of the stack is to the right.__, 
         Forth 2012, Standart.
  
-  __ OVER  ( n1 n2 — n1 n2 n1 )  Copies second item to top__, 
+  __OVER  ( n1 n2 — n1 n2 n1 )  Copies second item to top__, 
         "Starting Forth", Leo Brodie
  
   I have a cognitive problem about stack notation.
  
-  For didactic purposes, it represents the order of "pushed into the stack", 
-  not the order "count from top of stack".
-
-  In standards 79, 83, 94, the cells in ( after -- before ), 
+  In Forth standards 79, 83, 94, 20xx, the cells in ( after -- before ), 
   should be arranged on the left as bottom and on the right as top.
+  
+  For didactic purposes, it represents the order of "pushed into the stack", 
+  not the order of "counting from top of stack".
  
   For example, when representing ( w1 w2 w3 -- ), the order 
   is be w3 at the top and w1 at the bottom.
