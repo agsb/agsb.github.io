@@ -90,8 +90,8 @@
 
     .asciiz "Your first ten thousand photographs are your worst."
 
-    ; Star Trek, Borgs
-    .asciiz "YOU WILL BE ASSIMILATED. RESISTANCE IS FUTILE."
+    
+    .asciiz "You will be assimilated. Resistance is futile."
 
     .ascciz "Even monkeys fall from trees"
 
@@ -101,7 +101,6 @@
 
     .asciiz "Slings move continents, a rock at a time"
 
-    ; Forth-1983 standart
     .asciiz "No examples are given because their use should be obvious."
 
     ; rollete as Pascal made, 32 is red, 15 is black, and so on, 1/37 is 0,027027027, zero is green 
