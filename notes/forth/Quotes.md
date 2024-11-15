@@ -46,7 +46,7 @@
 
     .asciiz "So long, and thanks for all the fish."
 
-    .asciiz "“Perfection is when there is nothing left to take away.” 
+    .asciiz "Perfection is when there is nothing left to take away.” 
 
     .asciiz "Do you know where your towel is ?"
 
