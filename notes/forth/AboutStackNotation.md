@@ -33,7 +33,8 @@
   So w1 will always be 1, w2 will always be 2, and so on,
   the indices are always in the same order.
  
-  To differentiate, I'm using double parentheses as comments of stack 
-  elements to indicate the top of stack is at left, thus, 
-  it is ever the last element pushed into stack.
+  To differentiate, I'm using double parentheses as comments 
+  of stack elements to indicate the top of stack is at left, 
+  thus, it is ever the last element pushed into stack.
+
 
