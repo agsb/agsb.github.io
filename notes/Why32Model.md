@@ -2,9 +2,9 @@
 
 the most advanced CPUs uses a ISA of 32-bits.
 
-On ARMv7 16 registers, r0 is zero value fixed, r15 is program counter PC, r14 is stack pointer, r13 is fram pointer, plus flags and system registers
+On ARMv7 12 registers, r0 is zero value fixed, r15 is program counter PC, r14 is stack pointer, r13 is fram pointer, plus flags and system registers
 
-On ARM7, 32 registers, pc, sp, fp, zr, plus flags and system registers
+On ARM8, 32 generic registers, 35 fr, 34 pc, 33 sp, 33 zr, plus flags and system registers
 
 On RiscV, 32 registers, r0 is zero value fixed, plus flags and system registers and pc
 
