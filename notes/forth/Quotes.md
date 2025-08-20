@@ -90,7 +90,6 @@
 
     .asciiz "Your first ten thousand photographs are your worst."
 
-    
     .asciiz "You will be assimilated. Resistance is futile."
 
     .ascciz "Even monkeys fall from trees"
@@ -102,6 +101,8 @@
     .asciiz "Slings move continents, a rock at a time"
 
     .asciiz "No examples are given because their use should be obvious."
+
+    .asciiz ""But it clearly is the only right way. The fact that everybody else does it some other way only means that they are wrong"
 
     ; rollete as Pascal made, 32 is red, 15 is black, and so on, 1/37 is 0,027027027, zero is green 
     .asciiz "00,32,15,19,04,21,02,25,17,34,06,27,13,36,11,30,08,23,10,05,24,16,33,01,20,14,31,09,22,18,29,07,28,12,35,03,26,"
