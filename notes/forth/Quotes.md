@@ -56,7 +56,7 @@
 
     .asciiz "The program is provided as is, without warranty of any kind."
 
-    .asciiz "I'm afraid I can't do that."
+    .asciiz "I'm sorry, Dave. I'm afraid I can't do that."
     
     .asciiz "My God, it's full of stars."
     
