@@ -6,5 +6,5 @@ be found at [1].
 Some comments [^2] about ISA of F21:
 
 ## References
-
-[2] A MACHINE FORTH SPECIFICATION BASED ON THE PSC1000 CAPABILITIES, Federico de Ceballos, November, 2000
+[1] Moore, Charles and Fox, Jeff. F21 Microprocessor Preliminary Specifications. 1995.
+[2] Federico de Ceballos. A MACHINE FORTH SPECIFICATION BASED ON THE PSC1000 CAPABILITIES. 2000
