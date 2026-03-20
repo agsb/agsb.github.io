@@ -1,8 +1,10 @@
 **just randon notes while learn about it**
 
 references: 
-      https://github.com/torvalds/linux/blob/master/lib/maple_tree.c#L10
-      https://github.com/oracle/linux-uek/tree/howlett/maple/20220716
+            https://lwn.net/Articles/901714/
+            https://pdos.csail.mit.edu/papers/rcuvm:asplos12.pdf
+            https://github.com/torvalds/linux/blob/master/lib/maple_tree.c#L10
+            https://github.com/oracle/linux-uek/tree/howlett/maple/20220716
 
 # Notes about Mapple trees
 
@@ -21,7 +23,7 @@ alloc is:  parent, pivot0 ... pivot9, slot0 ... slot9, gap0 ... gap9, unused
  *  0b010 : 32 bit values, type in 0-2, slot in 3-7
  *  0b110 : 64 bit values, type in 0-2, slot in 3-7
 
-Note the use of _parent_ for reference, 7 bytes number plus a byte with metadata
+Note the use of _parent_ for reference, 7 bytes number plus a byte with metadata ????
 
 ## metadata
 
