@@ -12,10 +12,10 @@ references:
 
 Implementation types are dense, leaf, range, arange.
 
-dense  is: parent, slot0 ... slot30
-range  is: parent, pivot0 ... pivot14, slot0 ... slot15
-sparse is: parent, pivot0 ... pivot14, slot0 ... slot15
-alloc is:  parent, pivot0 ... pivot9, slot0 ... slot9, gap0 ... gap9, unused
+            dense  is: parent, slot0 ... slot30
+            range  is: parent, pivot0 ... pivot14, slot0 ... slot15
+            sparse is: parent, pivot0 ... pivot14, slot0 ... slot15
+            alloc is:  parent, pivot0 ... pivot9, slot0 ... slot9, gap0 ... gap9, unused
 
  * Slot size and alignment
  *  0b??1 : Root
