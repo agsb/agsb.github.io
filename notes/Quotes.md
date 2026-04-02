@@ -74,9 +74,9 @@
     
     .asciiz "There is no spoon."
 
-    .asciiz "Correlation is not causation"
+    .asciiz "Correlation is not causation."
 
-    .asciiz "Captain, the stars are gone"
+    .asciiz "Captain, the stars are gone."
 
     .asciiz "Bad programming is easy."
 
@@ -86,23 +86,23 @@
 
     .asciiz "We're sorry, that page doesn't exist."
 
-    .asciiz "If you need more than 3 levels of indentation, you’re screwed anyway"
+    .asciiz "If you need more than 3 levels of indentation, you’re screwed anyway."
 
     .asciiz "Your first ten thousand photographs are your worst."
 
     .asciiz "You will be assimilated. Resistance is futile."
 
-    .ascciz "Even monkeys fall from trees"
+    .ascciz "Even monkeys fall from trees."
 
-    .asciiz "Nobody else quite like you"
+    .asciiz "Nobody else quite like you."
 
     .asciiz "Fast.  Cheap.  Good.  Pick two."
 
-    .asciiz "Slings move continents, a rock at a time"
+    .asciiz "Slings move continents, a rock at a time."
 
     .asciiz "No examples are given because their use should be obvious."
 
-    .asciiz "But it clearly is the only right way. The fact that everybody else does it some other way only means that they are wrong"
+    .asciiz "But it clearly is the only right way. The fact that everybody else does it some other way only means that they are wrong."
 
     .ascii "An opaque type is a type which is exposed in an Application Programming Interfaces via a pointer but never concretely defined."
 
