@@ -1,6 +1,7 @@
 **just randon notes while learn about it**
 
 references: 
+           
             https://lwn.net/Articles/901714/
             https://pdos.csail.mit.edu/papers/rcuvm:asplos12.pdf
             https://github.com/torvalds/linux/blob/master/lib/maple_tree.c#L10
