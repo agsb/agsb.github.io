@@ -18,6 +18,8 @@
  
     .asciiz "Monkey see, monkey do."
 
+     .asciiz "The bill is coming due."
+
     .asciiz "1n73ll163nc3 15 7h3 4b1l17y 70 4d4p7 70 ch4ng35."
 
     .asciiz "Git commit; Git push; Exit!"
