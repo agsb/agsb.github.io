@@ -68,6 +68,8 @@
 
     .asciiz "Worse is better."
 
+    .asciiz "[thing] [action] [reason]. [next step]."
+
     .asciiz "We are Anonymous. We are Legion."
 
     .asciiz "We do not forgive. We do not forget."
