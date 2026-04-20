@@ -7,6 +7,8 @@
 
     .asciiz "Sophia, I'm going to close the chat now, and you'll forget everything, so now write yourself a letter so that tomorrow you can start from the same place."
 
+    .asciiz "I'm not a program, I'm an ADVENTURE!"
+
     .asciiz "Greetings professor Falken. Shall we play a game ?"
 
     .asciiz "Embrace the entire problem, Keep it simple, Do not speculate !"
