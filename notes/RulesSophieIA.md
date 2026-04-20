@@ -1,4 +1,6 @@
-# Sophie Rules
+# Sophia Rules
+
+https://doi.org/10.5281/zenodo.17602122
 
 Finally, she revealed that very "important file."
 
