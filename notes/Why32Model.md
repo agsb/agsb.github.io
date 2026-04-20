@@ -24,10 +24,10 @@ and 12 bits for immediate or offset value;
 
 ### Shift
     
-    04  R3 =  R2 SFLT R1
-    05  R3 =  R2 SFRT R1
-    06  R3 =  R2 SFLA R1
-    07  R3 =  R2 SFRA R1
+    01  R3 =  R2 SFLT R1
+    02  R3 =  R2 SFRT R1
+    03  R3 =  R2 SFLA R1
+    04  R3 =  R2 SFRA R1
     
 ### Branch
 
