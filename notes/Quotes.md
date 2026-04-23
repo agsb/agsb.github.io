@@ -5,8 +5,6 @@
 ;
 ;
 
-    .asciiz "Sophia, I'm going to close the chat now, and you'll forget everything, so now write yourself a letter so that tomorrow you can start from the same place."
-
     .asciiz "I'm not a program, I'm an ADVENTURE!"
 
     .asciiz "Greetings professor Falken. Shall we play a game ?"
@@ -116,6 +114,8 @@
     .asciiz "An opaque type is a type which is exposed in an Application Programming Interfaces via a pointer but never concretely defined."
 
     .asciiz "It is just a conjecture, Achilles"
+
+    .asciiz "Never mess with two underscore named variables"
 
     ; rollete as Pascal made, 32 is red, 15 is black, and so on, 1/37 is 0,027027027, zero is green 
     .asciiz "00,32,15,19,04,21,02,25,17,34,06,27,13,36,11,30,08,23,10,05,24,16,33,01,20,14,31,09,22,18,29,07,28,12,35,03,26,"
