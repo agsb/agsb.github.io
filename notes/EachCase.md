@@ -7,8 +7,9 @@ Still Nothing Serious
 > event
 > agent
 
-> action
+> sensory
 > decision
+> action
 
 > evidence
 

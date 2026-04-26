@@ -18,6 +18,7 @@ Implementated types are dense, leaf, range, arange.
             sparse is: parent, pivot0 ... pivot14, slot0 ... slot15
             alloc is:  parent, pivot0 ... pivot9, slot0 ... slot9, gap0 ... gap9, unused
             leaf is: full 256 user bytes 
+
  * Slot size and alignment
  *  0b??1 : Root
  *  0b?00 : 16 bit values, type in 0-1, slot in 2-7

@@ -25,3 +25,4 @@
 ## 12. “Gold rules shares”, coins and rares are unique and PRICELESS
 
 ## 13. "Never donate what was purchased", keep the value of things
+

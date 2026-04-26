@@ -2,9 +2,9 @@
 
 the most advanced CPUs uses a ISA of 32-bits.
 
-On ARMv7, 12 registers, r0 is zero value fixed, r15 is program counter PC, r14 is stack pointer, r13 is fram pointer, plus flags and system registers
+On ARMv7, 16 registers, 12 general registers, r0-r7 low ones, r8-r12 high ones, r13 is frame pointer, r14 is stack pointer, r15 is program counter PC, plus flags and system registers. It's a hipersized 6502 ?
 
-On RiscV, 32 registers, r0 is zero value fixed, plus flags and system registers and program counter.
+On RiscV, 32 registers, r0 is zero value fixed, r2 is link register, plus flags and system registers and program counter.
 
 There are some ISAs for 64 bits also, but is a waste.
 
@@ -56,12 +56,15 @@ Overall one 32-bit word, keeps 5 bits for opcode, 5 bits for destination Rd, 5 b
     
 ### Load and Save *
 
-    01 Rd := (Rp) + Rq
-    02 Rd := (Rp) + IMM
-    03 Rd =: (Rp) + Rq
-    04 Rd =: (Rp) + IMM
+    01 Rd := (Rp) + IMM
+    02 (Rp) + IMM := Rd
 
     for byte, half-word, word, dual-word (word is 32 bits)
+
+    only in ARMs
+
+        01 Rd := (Rp) + Rq ****
+        03 Rd =: (Rp) + Rq ****
 
 ## JUMP and LINK *
 
