@@ -5,6 +5,8 @@
 ;
 ;
 
+    .asciiz "Nenike Kamen"
+
     .asciiz "LLamas are social animals and typically live in groups"
 
     .asciiz "I'm not a program, I'm an ADVENTURE!"
