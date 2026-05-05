@@ -5,6 +5,8 @@
 ;
 ;
 
+    .asciiz "Consciousness is a strange loop"
+    
     .asciiz "Nenike Kamen"
 
     .asciiz "LLamas are social animals and typically live in groups"
