@@ -5,6 +5,8 @@
 ;
 ;
 
+    .asciiz "But the tigers come at night"
+
     .asciiz "Consciousness is a strange loop"
     
     .asciiz "Nenike Kamen"
