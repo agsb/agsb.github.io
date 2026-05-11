@@ -5,6 +5,8 @@
 ;
 ;
 
+    .asciiz "you reap what you sow"
+
     .asciiz "But the tigers come at night"
 
     .asciiz "Consciousness is a strange loop"
