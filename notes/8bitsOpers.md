@@ -2,6 +2,14 @@
 
 [7][6][5][4][3][2][1][0]
 
+## inverse, one complement
+
+  0x0 - byte. Any 1 goto 0. Any 0 goto 1.
+
+## negate, two complement
+
+  0x0 - byte + 1. Invert byte and add 1.
+
 ## shift left
   
   [7][6][5][4][3][2][1][0] ==> [6][5][4][3][2][1][0]__0__
