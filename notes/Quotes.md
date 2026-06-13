@@ -15,6 +15,8 @@
 
     .asciiz "LLamas are social animals and typically live in groups"
 
+    .asciiz "Please Do Not Vibe F*** Up This Software"
+
     .asciiz "I'm not a program, I'm an ADVENTURE!"
 
     .asciiz "Greetings professor Falken. Shall we play a game ?"
