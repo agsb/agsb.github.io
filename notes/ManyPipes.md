@@ -13,8 +13,8 @@ An alternative for MQTT ?
   
 ## Using directories
 
-./publishers/channel/{stats,type,description}/{last,shar256,uuid}
-./subscribers/subscriber/{channels}/
+- /publishers/channel/{stats,type,description}/{last,shar256,uuid}
+- /subscribers/subscriber/{channels}/
 
 
 
