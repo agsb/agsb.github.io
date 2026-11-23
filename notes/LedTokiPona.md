@@ -22,7 +22,7 @@ Using all 8 bits (0–255) gives 256 total byte slots, allowing you to keep ASCI
 
 
  | `Byte (Dec)` | `Binary (8-bit)` | `Word_Signal` | `Meaning` | `Category` | 
- | `:---` | `:---` | `:---` | `:---` | `:---` | 
+ | :--- | :--- | :--- | :--- | :--- | 
  | `0` | `00000000` | `[NUL]` | `Null / Idle` | `Control (0–31)` | 
  | `1` | `00000001` | `[SOH]` | `Start of Heading` | `Control` | 
  | `2` | `00000010` | `[STX]` | `Start of Text (`[START]`)` | `Control` | 
