@@ -14,7 +14,200 @@ For Toki-Pona Wiki and texts https://sona.pona.la/wiki/Main_Page
 
 For a Toki-Pona Self Music https://www.youtube.com/watch?v=U_w0-VUMh2o
 
-## lexical order (en)
+## Using no repeat nibbles flash1 not equal flash2 
+
+### lexical order 
+
+| # | Word_Signal | Flash_1 | Flash_2 | Meaning | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 0A | `[SPACE]` | `0000` | `-` | Space (word separator) | 1-flash control |
+| 0B | `[EOT]` | `1111` | `-` | End of Text (transmission end) | 1-flash control |
+| 1 | `a` | `0001` | `0010` | (emphasis, emotion, ah!) | Group 1 (0001) - pu (skips 0001) |
+| 2 | `akesi` | `0001` | `0011` | reptile, amphibian, lizard, frog | pu |
+| 3 | `ala` | `0001` | `0100` | no, not, nothing, zero, none | pu |
+| 4 | `alasa` | `0001` | `0101` | hunt, forage, search, gather | pu |
+| 5 | `ale` | `0001` | `0110` | all, every, everything, universe | pu |
+| 6 | `ali` | `0001` | `0111` | explicit variant of ale (all) | pu (variant) |
+| 7 | `anpa` | `0001` | `1000` | low, bottom, down, under, humble | pu |
+| 8 | `ante` | `0001` | `1001` | different, other, change, alter | pu |
+| 9 | `anu` | `0001` | `1010` | or | pu |
+| 10 | `awen` | `0001` | `1011` | stay, keep, remain, wait, safe | pu |
+| 11 | `e` | `0001` | `1100` | (direct object marker) | pu |
+| 12 | `en` | `0001` | `1101` | and (between subjects) | pu |
+| 13 | `esun` | `0001` | `1110` | market, shop, trade, buy, sell | pu |
+| 14 | `ijo` | `0010` | `0001` | thing, object, matter, something | Group 2 (0010) - pu (skips 0010) |
+| 15 | `ike` | `0010` | `0011` | bad, evil, negative, complex | pu |
+| 16 | `ilo` | `0010` | `0100` | tool, machine, device, implement | pu |
+| 17 | `insa` | `0010` | `0101` | inside, interior, center, stomach | pu |
+| 18 | `jaki` | `0010` | `0110` | dirty, gross, trash, toxic, waste | pu |
+| 19 | `jan` | `0010` | `0111` | person, human, somebody | pu |
+| 20 | `jelo` | `0010` | `1000` | yellow, yellowish | pu |
+| 21 | `jo` | `0010` | `1001` | have, carry, hold, contain | pu |
+| 22 | `kala` | `0010` | `1010` | fish, marine animal, sea creature | pu |
+| 23 | `kalama` | `0010` | `1011` | sound, noise, voice, recite | pu |
+| 24 | `kama` | `0010` | `1100` | come, arrive, become, future | pu |
+| 25 | `kasi` | `0010` | `1101` | plant, tree, leaf, herb, vegetation | pu |
+| 26 | `ken` | `0010` | `1110` | can, able to, possible, maybe | pu |
+| 27 | `kepeken` | `0011` | `0001` | use, using, with, by means of | Group 3 (0011) - pu (skips 0011) |
+| 28 | `kili` | `0011` | `0010` | fruit, vegetable, mushroom | pu |
+| 29 | `kiwen` | `0011` | `0100` | rock, stone, metal, hard object | pu |
+| 30 | `ko` | `0011` | `0101` | clay, dough, paste, powder, semi-solid | pu |
+| 31 | `kon` | `0011` | `0110` | air, wind, breath, spirit, essence | pu |
+| 32 | `kule` | `0011` | `0111` | color, colorful, paint | pu |
+| 33 | `kulupu` | `0011` | `1000` | group, community, team, society | pu |
+| 34 | `kute` | `0011` | `1001` | ear, hear, listen, obey | pu |
+| 35 | `la` | `0011` | `1010` | (context / if-then marker) | pu |
+| 36 | `lape` | `0011` | `1011` | sleep, rest | pu |
+| 37 | `laso` | `0011` | `1100` | blue, green | pu |
+| 38 | `lawa` | `0011` | `1101` | head, mind, lead, control, guide | pu |
+| 39 | `len` | `0011` | `1110` | cloth, clothing, fabric, cover | pu |
+| 40 | `lete` | `0100` | `0001` | cold, cool, raw, freeze | Group 4 (0100) - pu (skips 0100) |
+| 41 | `li` | `0100` | `0010` | (predicate / verb marker) | pu |
+| 42 | `lili` | `0100` | `0011` | small, little, young, few, short | pu |
+| 43 | `linja` | `0100` | `0101` | line, string, rope, thread, hair | pu |
+| 44 | `lipu` | `0100` | `0110` | paper, book, page, flat object | pu |
+| 45 | `loje` | `0100` | `0111` | red, reddish | pu |
+| 46 | `lon` | `0100` | `1000` | at, in, on, exist, true, real | pu |
+| 47 | `luka` | `0100` | `1001` | hand, arm, touch, five | pu |
+| 48 | `lukin` | `0100` | `1010` | see, look, read, eye, watch | pu |
+| 49 | `lupa` | `0100` | `1011` | hole, door, window, opening | pu |
+| 50 | `ma` | `0100` | `1100` | land, earth, country, place, soil | pu |
+| 51 | `mama` | `0100` | `1101` | parent, ancestor, creator | pu |
+| 52 | `mani` | `0100` | `1110` | money, wealth, currency, livestock | pu |
+| 53 | `meli` | `0101` | `0001` | woman, female, feminine | Group 5 (0101) - pu (skips 0101) |
+| 54 | `mi` | `0101` | `0010` | I, me, my, we, us, our | pu |
+| 55 | `mije` | `0101` | `0011` | man, male, masculine | pu |
+| 56 | `moku` | `0101` | `0100` | eat, drink, food, meal | pu |
+| 57 | `moli` | `0101` | `0110` | dead, death, die, kill | pu |
+| 58 | `monsi` | `0101` | `0111` | back, behind, rear | pu |
+| 59 | `mu` | `0101` | `1000` | (animal sound: meow, moo, woof) | pu |
+| 60 | `mun` | `0101` | `1001` | moon, star, night sky object | pu |
+| 61 | `musi` | `0101` | `1010` | fun, game, art, play, entertain | pu |
+| 62 | `mute` | `0101` | `1011` | many, very, much, quantity, more | pu |
+| 63 | `nanpa` | `0101` | `1100` | number, count, (ordinal marker) | pu |
+| 64 | `nasa` | `0101` | `1101` | strange, crazy, silly, drunk | pu |
+| 65 | `nasin` | `0101` | `1110` | way, path, method, road, custom | pu |
+| 66 | `nena` | `0110` | `0001` | bump, hill, mountain, nose, button | Group 6 (0110) - pu (skips 0110) |
+| 67 | `ni` | `0110` | `0010` | this, that | pu |
+| 68 | `nimi` | `0110` | `0011` | word, name | pu |
+| 69 | `noka` | `0110` | `0100` | foot, leg, base, bottom part | pu |
+| 70 | `o` | `0110` | `0101` | (vocative / imperative marker, hey!) | pu |
+| 71 | `olin` | `0110` | `0111` | love, compassion, affection | pu |
+| 72 | `ona` | `0110` | `1000` | he, she, it, they | pu |
+| 73 | `open` | `0110` | `1001` | open, begin, start, turn on | pu |
+| 74 | `pakala` | `0110` | `1010` | broken, mistake, damage, ruin | pu |
+| 75 | `pali` | `0110` | `1011` | do, make, work, build, create | pu |
+| 76 | `palisa` | `0110` | `1100` | stick, rod, branch, long hard thing | pu |
+| 77 | `pan` | `0110` | `1101` | bread, grain, rice, pasta, cereal | pu |
+| 78 | `pana` | `0110` | `1110` | give, send, emit, put, release | pu |
+| 79 | `pi` | `0111` | `0001` | of (regroups modifiers) | Group 7 (0111) - pu (skips 0111) |
+| 80 | `pilin` | `0111` | `0010` | feel, emotion, heart, mind | pu |
+| 81 | `pimeja` | `0111` | `0011` | black, dark, shadow, night | pu |
+| 82 | `pini` | `0111` | `0100` | end, finish, past, closed | pu |
+| 83 | `pipi` | `0111` | `0101` | bug, insect, spider, ant | pu |
+| 84 | `poka` | `0111` | `0110` | side, hip, next to, near | pu |
+| 85 | `poki` | `0111` | `1000` | box, container, bowl, cup | pu |
+| 86 | `pona` | `0111` | `1001` | good, simple, positive, fix | pu |
+| 87 | `pu` | `0111` | `1010` | interact with official Toki Pona book | pu |
+| 88 | `sama` | `0111` | `1011` | same, similar, equal, like | pu |
+| 89 | `seli` | `0111` | `1100` | fire, heat, warm, cook | pu |
+| 90 | `selo` | `0111` | `1101` | skin, bark, shell, outer layer | pu |
+| 91 | `seme` | `0111` | `1110` | what? which? (question word) | pu |
+| 92 | `sewi` | `1000` | `0001` | high, up, above, sky, sacred | Group 8 (1000) - pu (skips 1000) |
+| 93 | `sijelo` | `1000` | `0010` | body, physical state, torso | pu |
+| 94 | `sike` | `1000` | `0011` | circle, wheel, ball, cycle, year | pu |
+| 95 | `sin` | `1000` | `0100` | new, fresh, another, again | pu |
+| 96 | `sina` | `1000` | `0101` | you, your | pu |
+| 97 | `sinpin` | `1000` | `0110` | face, front, wall, chest | pu |
+| 98 | `sitelen` | `1000` | `0111` | image, write, draw, symbol | pu |
+| 99 | `sona` | `1000` | `1001` | know, knowledge, wisdom | pu |
+| 100 | `soto` | `1000` | `1010` | left, left side | directional |
+| 101 | `soweli` | `1000` | `1011` | land mammal, animal, beast | pu |
+| 102 | `suli` | `1000` | `1100` | big, tall, heavy, important | pu |
+| 103 | `suno` | `1000` | `1101` | sun, light, brightness, shine | pu |
+| 104 | `supa` | `1000` | `1110` | horizontal surface, table, bed | pu |
+| 105 | `suwi` | `1001` | `0001` | sweet, cute, fragrant, pleasant | Group 9 (1001) - pu (skips 1001) |
+| 106 | `tan` | `1001` | `0010` | from, because of, origin | pu |
+| 107 | `taso` | `1001` | `0011` | but, however, only, just | pu |
+| 108 | `tawa` | `1001` | `0100` | to, toward, go, move | pu |
+| 109 | `teje` | `1001` | `0101` | right, right side | directional |
+| 110 | `telo` | `1001` | `0110` | water, liquid, drink, wash | pu |
+| 111 | `tenpo` | `1001` | `0111` | time, moment, period, duration | pu |
+| 112 | `toki` | `1001` | `1000` | speak, language, message, hello | pu |
+| 113 | `tomo` | `1001` | `1010` | house, building, room, shelter | pu |
+| 114 | `tu` | `1001` | `1011` | two, divide, split | pu |
+| 115 | `unpa` | `1001` | `1100` | sex, sexual, intimacy | pu |
+| 116 | `uta` | `1001` | `1101` | mouth, lips, oral, kiss | pu |
+| 117 | `utala` | `1001` | `1110` | fight, battle, conflict, compete | pu |
+| 118 | `walo` | `1010` | `0001` | white, pale, light-colored | Group 10 (1010) - pu & ku suli |
+| 119 | `wan` | `1010` | `0010` | one, unique, unite | pu |
+| 120 | `waso` | `1010` | `0011` | bird, flying creature | pu |
+| 121 | `wawa` | `1010` | `0100` | strong, energy, power, intense | pu |
+| 122 | `weka` | `1010` | `0101` | away, absent, remove | pu |
+| 123 | `wile` | `1010` | `0110` | want, need, desire, must | pu |
+| 124 | `epiku` | `1010` | `0111` | epic, awesome, amazing | ku suli |
+| 125 | `jasima` | `1010` | `1000` | reflection, mirror, opposite, reverse | ku suli |
+| 126 | `kijetesantakalu` | `1010` | `1001` | raccoon, coati, mustelid | ku suli |
+| 127 | `kin` | `1010` | `1011` | also, too, indeed, still | ku suli (skips 1010) |
+| 128 | `kipisi` | `1010` | `1100` | cut, divide, slice, piece | ku suli |
+| 129 | `kokosila` | `1010` | `1101` | speak non-Toki Pona where TP is used | ku suli |
+| 130 | `ku` | `1010` | `1110` | interact with Toki Pona Dictionary | ku suli |
+| 131 | `lanpan` | `1011` | `0001` | take, seize, grab, capture | Group 11 (1011) - ku suli & ku lili |
+| 132 | `leko` | `1011` | `0010` | block, brick, square, cube | ku suli |
+| 133 | `meso` | `1011` | `0011` | middle, medium, average | ku suli |
+| 134 | `misikeke` | `1011` | `0100` | medicine, medication, cure | ku suli |
+| 135 | monsuta | 1011 | 0101 | fear, monster, scary, danger | ku suli |
+| 136 | n | 1011 | 0110 | (interjection: um, hmm, thinking...) | ku suli |
+| 137 | namako | 1011 | 0111 | spice, extra, additional, embellishment | ku suli |
+| 138 | oko | 1011 | 1000 | eye, vision | ku suli |
+| 139 | soko | 1011 | 1001 | mushroom, fungus | ku suli |
+| 140 | tonsi | 1011 | 1010 | non-binary, trans, gender-diverse | ku suli |
+| 141 | apeja | 1011 | 1100 | shame, guilt, dishonor, taboo | ku lili (skips 1011) |
+| 142 | isipin | 1011 | 1101 | think, imagine, idea | ku lili |
+| 143 | kapesi | 1011 | 1110 | brown, tan, gray | ku lili |
+| 144 | linluwi | 1100 | 0001 | internet, network, digital connection | Group 12 (1100) - ku lili & Controls |
+| 145 | majuna | 1100 | 0010 | old, ancient, aged | ku lili |
+| 146 | mulapisu | 1100 | 0011 | pizza | ku lili |
+| 147 | omekapo | 1100 | 0100 | goodbye, farewell, eat a good fish | ku lili |
+| 148 | pake | 1100 | 0101 | block, stop, prevent, brake | ku lili |
+| 149 | powe | 1100 | 0110 | false, lie, pretend, illusion | ku lili |
+| 150 | su | 1100 | 0111 | interact with illustrated su books | ku lili |
+| 151 | unu | 1100 | 1000 | purple, violet, lilac | ku lili |
+| 152 | [NAME_START] | 1100 | 1001 | Start of proper noun | Control |
+| 153 | [NAME_END] | 1100 | 1010 | End of proper noun | Control |
+| 154 | [NEWLINE] | 1100 | 1011 | Line break (\n) | Control |
+| 155 | [ACK] | 1100 | 1101 | Acknowledged / Understood (pona!) | Control (skips 1100) |
+| 156 | [REPEAT] | 1100 | 1110 | Repeat last message / Error | Control |
+| 157 | a (letter) | 1101 | 0001 | Letter A (for spelling names) | Group 13 (1101) - Letters |
+| 158 | e (letter) | 1101 | 0010 | Letter E (for spelling names) | Letters |
+| 159 | i/j (letter) | 1101 | 0011 | Letter I / J (for spelling names) | Letters |
+| 160 | k (letter) | 1101 | 0100 | Letter K (for spelling names) | Letters |
+| 161 | l (letter) | 1101 | 0101 | Letter L (for spelling names) | Letters |
+| 162 | m (letter) | 1101 | 0110 | Letter M (for spelling names) | Letters |
+| 163 | n (letter) | 1101 | 0111 | Letter N (for spelling names) | Letters |
+| 164 | o (letter) | 1101 | 1000 | Letter O (for spelling names) | Letters |
+| 165 | p (letter) | 1101 | 1001 | Letter P (for spelling names) | Letters |
+| 166 | s (letter) | 1101 | 1010 | Letter S (for spelling names) | Letters |
+| 167 | t (letter) | 1101 | 1011 | Letter T (for spelling names) | Letters |
+| 168 | u (letter) | 1101 | 1100 | Letter U (for spelling names) | Letters |
+| 169 | w (letter) | 1101 | 1110 | Letter W (for spelling names) | Letters (skips 1101) |
+| 170 | 0 | 1110 | 0001 | Digit 0 | Group 14 (1110) - Digits & Punctuation |
+| 171 | 1 | 1110 | 0010 | Digit 1 | Digits |
+| 172 | 2 | 1110 | 0011 | Digit 2 | Digits |
+| 173 | 3 | 1110 | 0100 | Digit 3 | Digits |
+| 174 | 4 | 1110 | 0101 | Digit 4 | Digits |
+| 175 | 5 | 1110 | 0110 | Digit 5 | Digits |
+| 176 | 6 | 1110 | 0111 | Digit 6 | Digits |
+| 177 | 7 | 1110 | 1000 | Digit 7 | Digits |
+| 178 | 8 | 1110 | 1001 | Digit 8 | Digits |
+| 179 | 9 | 1110 | 1010 | Digit 9 | Digits |
+| 180 | . | 1110 | 1011 | Period / full stop | Punctuation |
+| 181 | , | 1110 | 1100 | Comma | Punctuation |
+| 182 | ? | 1110 | 1101 | Question mark | Punctuation (skips 1110) |
+
+## Using repeat nibbles flash1 equal flash2 
+
+### lexical order (en)
 
 | # | Word_Signal | Flash_1 | Flash_2 | Meaning | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- |
