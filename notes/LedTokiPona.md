@@ -4,6 +4,8 @@
 
 "Here is the complete 198-entry unified protocol table (2 single-flash controls + 196 two-flash entries) in clean Markdown table format."
 
+_this file is a draft, a stub for ideas_
+
 ## Toki Pona
 
 What is Toki-Pone https://sona.pona.la/wiki/Toki_Pona
@@ -14,10 +16,10 @@ For Toki-Pona Wiki and texts https://sona.pona.la/wiki/Main_Page
 
 For a Toki-Pona Self Music https://www.youtube.com/watch?v=U_w0-VUMh2o
 
-## Using no repeat nibbles flash1 not equal flash2 
+## Using no repeat nibbles (lash1 not equal flash2)
 
-this table reserves bytes with equal nibbles, 
-    0000000 00010001 ...11101110 11111111
+It reserves bytes with equal nibbles, 
+    0000000 00010001 .. 11101110 11111111
 
 ### lexical order with byte values
 
@@ -207,6 +209,8 @@ this table reserves bytes with equal nibbles,
 | 180 | . | 1110 | 1011 | 235 | Period / full stop | Punctuation (#1) |
 | 181 | , | 1110 | 1100 | 236 | Comma | Punctuation (#2) |
 | 182 | ? | 1110 | 1101 | 237 | Question mark | Punctuation (#3) |
+
+## Using repeat nibbles (flash1 equal flash2)
 
 ### lexical order 
 
