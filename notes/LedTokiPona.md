@@ -1,6 +1,18 @@
 # Led flash toki pona 
 
+@Gemini, @agsb 23/22/2026
+
 Here is the complete 198-entry unified protocol table (2 single-flash controls + 196 two-flash entries) in clean Markdown table format:
+
+## Toki Pona
+
+What is Toki-Pone https://sona.pona.la/wiki/Toki_Pona
+
+For Toki Pona characters and glyphs see https://sitelenpona.net/common.html
+
+For Toki-Pona Wiki and texts https://sona.pona.la/wiki/Main_Page
+
+For a Toki-Pona Self Music https://www.youtube.com/watch?v=U_w0-VUMh2o
 
 ## lexical order (en)
 
