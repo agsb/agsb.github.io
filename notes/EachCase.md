@@ -13,7 +13,7 @@ Still Nothing Serious
 
 > evidence
 
-#### minimal math for 8-bits unsigned values, 255 is dummy.
+#### minimal math for 8-bits unsigned values, 0x8000 is NaN.
 
     > feedback
     > bias
